@@ -2,7 +2,7 @@
 
 Project made to learn more about React Hooks and test Rick and Morty's Api.
 
-[Live Demo](https://thunderprocode.github.io/Rick-and-Morty/)
+[Live Demo](https://rick-and-morty-rho-five.vercel.app/)
 
 ## App functionalities:
 
