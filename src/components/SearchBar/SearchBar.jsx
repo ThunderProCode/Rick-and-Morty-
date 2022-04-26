@@ -5,16 +5,23 @@ import './SearchBar.css';
 
 const SearchBar = () => {
 
-    const {darkMode} = useContext(ThemeContext);
+    const {darkMode, setSearchValue, searchCharacter } = useContext(ThemeContext);
     let searchbarClass = `searchbar ${darkMode ? "searchbar-dark" : ""}`;
+
+
+    const onSearchValueChange = (event) => {
+        setSearchValue(event.target.value);
+        searchCharacter();
+    }
 
     return (
         <div className={searchbarClass}>
             <input 
                 type="text" 
                 placeholder="Search a character"
+                onChange={ onSearchValueChange }
             />
-            <button><FaSearch/></button>
+            <button ><FaSearch/></button>
         </div>
     );
 };

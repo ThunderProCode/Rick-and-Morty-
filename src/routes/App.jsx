@@ -19,7 +19,10 @@ const App = () => {
     currentPage,
     totalPages,
     darkMode,
-    handleClick
+    handleClick,
+    setSearchValue,
+    searchValue,
+    searchCharacter
   } = useCharacters();
 
   const values = {
@@ -35,6 +38,9 @@ const App = () => {
       goToPrevPage,
       currentPage,
       totalPages,
+      setSearchValue,
+      searchValue,
+      searchCharacter
   }
 
   let appClass = `App ${ darkMode ? "bg-dark" : "" }`;

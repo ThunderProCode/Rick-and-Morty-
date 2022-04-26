@@ -9,6 +9,7 @@ function useCharacters () {
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ totalPages, setTotalPages ] = useState(0);
     const [darkMode, setDarkMode ] = useState(true);
+    const [ searchValue, setSearchValue ] = useState('');
 
     const fetchCharacters = async (url) => {
         const response = await fetch(url);
@@ -21,6 +22,10 @@ function useCharacters () {
         setNext(data.info.next);
         setPrev(data.info.prev);
         setTotalPages(data.info.pages);
+    }
+
+    const searchCharacter = () => {
+        fetchCharacters(`https://rickandmortyapi.com/api/character/?name=${searchValue}`);
     }
 
     useEffect( () => {
@@ -100,7 +105,10 @@ function useCharacters () {
         totalPages,
         darkMode,
         setDarkMode,
-        handleClick
+        handleClick,
+        setSearchValue,
+        searchValue,
+        searchCharacter
     });
 
 }
