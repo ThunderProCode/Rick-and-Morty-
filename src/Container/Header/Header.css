@@ -1,0 +1,20 @@
+.header-container {
+
+    padding: 16px;
+
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and ( max-width: 900px ) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .pages-container {
+        margin-top: 24px;
+        
+    }
+}
