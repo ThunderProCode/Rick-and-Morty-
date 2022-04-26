@@ -48,7 +48,7 @@ const Navbar = () => {
                         </div>
                         <ul className="navbar__smallscreen-links" >
                             <li>
-                                <a href="/Rick-and-Morty/">Home</a>
+                                <a href="/Rick-and-Morty-/">Home</a>
                             </li>
                             <li>
                                 <a href="/favorites">Favorites</a>
