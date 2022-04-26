@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import ReactDOM from 'react-dom/client';
 import App from './routes/App';
@@ -9,12 +9,12 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/"  element={<App/>}/>
-        <Route path="/Rick-and-Morty/favorites"  element={<Favorites/>} />
+        <Route path="favorites"  element={<Favorites/>} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

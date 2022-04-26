@@ -8,6 +8,7 @@ function useCharacters () {
     const [ prev, setPrev ] = useState("");
     const [ currentPage, setCurrentPage ] = useState(1);
     const [ totalPages, setTotalPages ] = useState(0);
+    const [darkMode, setDarkMode ] = useState(true);
 
     const fetchCharacters = async (url) => {
         const response = await fetch(url);
@@ -82,6 +83,10 @@ function useCharacters () {
         return characterIsFavorite;
     }
 
+    const handleClick = () => {
+        setDarkMode(!darkMode);
+    }
+
     return ({
         characters,
         isFavorite,
@@ -92,7 +97,10 @@ function useCharacters () {
         goToNextPage,
         goToPrevPage,
         currentPage,
-        totalPages
+        totalPages,
+        darkMode,
+        setDarkMode,
+        handleClick
     });
 
 }

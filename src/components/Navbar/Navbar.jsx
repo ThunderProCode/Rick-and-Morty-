@@ -3,8 +3,6 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineClose } from 'react-icons/md';
 import { useContext, useState } from 'react';
 import './Navbar.css';
-import { Link } from 'react-router-dom';
-
 
 const Navbar = () => {
 

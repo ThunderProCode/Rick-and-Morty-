@@ -1,5 +1,4 @@
 import ThemeContext from '../context/ThemeContext';
-import { useState } from 'react';
 import './App.css';
 import { useCharacters } from '../Hooks/useCharacters';
 import Navbar from '../components/Navbar/Navbar';
@@ -8,7 +7,6 @@ import CharacterCard from '../components/CharacterCard/CharacterCard';
 
 const App = () => {
 
-  const [darkMode, setDarkMode ] = useState(true);
   const { 
     characters,
     isFavorite,
@@ -19,12 +17,10 @@ const App = () => {
     goToNextPage,
     goToPrevPage,
     currentPage,
-    totalPages
+    totalPages,
+    darkMode,
+    handleClick
   } = useCharacters();
-
-  const handleClick = () => {
-      setDarkMode(!darkMode);
-  }
 
   const values = {
       darkMode, 
@@ -38,7 +34,7 @@ const App = () => {
       goToNextPage,
       goToPrevPage,
       currentPage,
-      totalPages
+      totalPages,
   }
 
   let appClass = `App ${ darkMode ? "bg-dark" : "" }`;
