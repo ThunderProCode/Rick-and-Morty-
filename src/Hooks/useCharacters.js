@@ -30,9 +30,16 @@ function useCharacters () {
 
     useEffect( () => {
         const  item =  localStorage.getItem("FAVORITE_CHARACTERS_V1");
+        const themeMode = localStorage.getItem("DARKMODE_STATE_V1");
+        
         if(item){
-            setFavorites(JSON.parse( localStorage.getItem("FAVORITE_CHARACTERS_V1")));
+            setFavorites(JSON.parse(item));
         }
+
+        if(themeMode){
+            setDarkMode(!JSON.parse(themeMode));
+        }
+
         fetchCharacters('https://rickandmortyapi.com/api/character');
     },[]);
     
@@ -90,6 +97,7 @@ function useCharacters () {
 
     const handleClick = () => {
         setDarkMode(!darkMode);
+        localStorage.setItem("DARKMODE_STATE_V1", JSON.stringify(darkMode));
     }
 
     return ({
