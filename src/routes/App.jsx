@@ -4,6 +4,7 @@ import { useCharacters } from '../Hooks/useCharacters';
 import Navbar from '../components/Navbar/Navbar';
 import Header from '../Container/Header/Header';
 import CharacterCard from '../components/CharacterCard/CharacterCard';
+import PagesSwitch from '../components/PagesSwitch/PagesSwitch';
 
 const App = () => {
 
@@ -63,7 +64,10 @@ const App = () => {
                   />
               ))
           }
-          </div>        
+          </div>       
+          <div className="pages-switch-container">
+            <PagesSwitch/>
+          </div> 
       </div>
     </ThemeContext.Provider>
   );
